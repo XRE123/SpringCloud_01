@@ -1,0 +1,9 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    serviceUrl: #服务注册中心的配置内容，指定服务注册中心的位置
+      defaultZone: http://eureka6001.com:6001/eureka/,http://eureka6002.com:6002/eureka/

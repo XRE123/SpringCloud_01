@@ -1,0 +1,15 @@
+server:
+  port: 6002 # 服务端口
+
+eureka:
+  instance:
+    hostname: eureka6002.com # eureka服务端的实例名称
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl: #服务注册中心的配置内容，指定服务注册中心的位置
+      defaultZone: http://eureka6001.com:6001/eureka/
+
+#  关闭Erueka自我保护机制
+  server:
+    enable-self-preservation: false
