@@ -1,0 +1,20 @@
+server:
+  port: 7001
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    serviceUrl: #服务注册中心的配置内容，指定服务注册中心的位置
+      defaultZone: http://eureka6001.com:6001/eureka/,http://eureka6002.com:6002/eureka/
+#  注册不显示主机名，只包含服务名和端口
+#  instance:
+#    instance-id: ${spring.application.name}:${server.port}
+#    prefer-ip-address: true
+
+zuul:
+  routes:
+    provider-product:
+      path: /product/**
+      serviceID: microservice-product
+      stripPrefix: false
